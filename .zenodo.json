@@ -1,0 +1,53 @@
+{
+  "title": "Dual-Parameter Synergy-Sensitivity Profiling of Epigenetic-Targeted Drug Combinations in Cancer",
+  "upload_type": "software",
+  "description": "Combination therapies improve cancer outcomes but remain limited by unpredictable drug-drug interactions. Epigenetic-targeted agents can resensitize tumors to targeted drugs, yet the synergistic versus antagonistic landscape of such pairs is incompletely mapped. Here, we systematically profiled 206 epigenetic-targeted drug combinations spanning HDAC, DNMT, LSD1, and PARP inhibitor classes across three cancer cell lines (KBM-7, A549, MCF-7) using a dual-parameter computational framework. Synergy was quantified with four reference models (HSA, Bliss, Loewe, ZIP) on publicly available dose-response matrices, and therapeutic utility was scored with the Combination Sensitivity Score (CSS). Thirty-six combinations (17.5%) were synergistic across all models, whereas 171 were antagonistic. HDAC inhibitor + PARP inhibitor pairs dominated the synergistic class (61%), whereas LSD1 inhibitor + BCR-ABL inhibitor combinations were consistently antagonistic and mechanistically linked to Wnt/beta-catenin pathway activation. A dual-parameter filter (synergy >5 and CSS >50%) reduced false-positive calls by 32% relative to single-metric screening. Integrating four synergy models with sensitivity scoring provides a pragmatic roadmap for prioritizing epigenetic-targeted combinations and avoiding antagonistic regimens in preclinical development.",
+  "creators": [
+    {
+      "name": "Liu, Yong",
+      "affiliation": "School of Public Health and Emergency Management, Southern University of Science and Technology, Shenzhen, China"
+    },
+    {
+      "name": "Chen, Xi",
+      "affiliation": "The Institute for Chemical Carcinogenesis, Collaborative Innovation Center for Environmental Toxicity, School of Public Health, Guangzhou Medical University, Guangzhou, China"
+    },
+    {
+      "name": "Huang, Yeen",
+      "affiliation": "School of Nursing, Hong Kong Polytechnic University, Hong Kong SAR, China"
+    },
+    {
+      "name": "Lu, Jiachun",
+      "affiliation": "The Institute for Chemical Carcinogenesis, Collaborative Innovation Center for Environmental Toxicity, School of Public Health, Guangzhou Medical University, Guangzhou, China"
+    },
+    {
+      "name": "Cheung, Kin",
+      "affiliation": "School of Nursing, Hong Kong Polytechnic University, Hong Kong SAR, China"
+    },
+    {
+      "name": "Fang, Shenying",
+      "affiliation": "School of Public Health and Emergency Management, Southern University of Science and Technology, Shenzhen, China; Department of ICU, Shenzhen Hospital, Southern Medical University, Shenzhen, China"
+    }
+  ],
+  "keywords": [
+    "Epigenetic drugs",
+    "Targeted therapy",
+    "SynergyFinder",
+    "Drug combinations",
+    "HDAC inhibitors",
+    "Wnt/beta-catenin"
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "version": "v1.0.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/runwithsmile/dualparam-framework",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "references": [
+    "https://synergyfinder.fimm.fi",
+    "http://drugcombdb.denglab.org"
+  ]
+}
