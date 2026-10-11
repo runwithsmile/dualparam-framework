@@ -61,7 +61,7 @@ dualparam-framework/
 
 ```bash
 # clone
-git clone https://github.com/liuyongjoy/dualparam-framework.git
+git clone https://github.com/runwithsmile/dualparam-framework.git
 cd dualparam-framework
 
 # (optional) Python convenience environment
@@ -141,7 +141,7 @@ A single command regenerates everything:
 ### 5.1 Checklist before archiving (author action required)
 
 - **Zenodo DOI** — replace `10.5281/zenodo.XXXXXXX` in `CITATION.cff` and the top badge with the real DOI after uploading to Zenodo.
-- **GitHub URL** — pre-filled with the planned URL `github.com/liuyongjoy/dualparam-framework` (derived from the corresponding author's e-mail `liuyongjoy@outlook.com`). Replace it if the actual GitHub username differs once the repository is created.
+- **GitHub URL** — set to the actual repository `github.com/runwithsmile/dualparam-framework` (GitHub username `runwithsmile`; this differs from the corresponding author's e-mail `liuyongjoy@outlook.com`).
 - **Step 1 (SynergyFinder 2.0)** regenerates the synergy + CSS tables from `data/raw/`. The deposited `results/*.csv` are the reference outputs; Steps 2–4 run directly on them without re-running SynergyFinder.
 - **Dual-threshold false-positive reduction** is computed live by `scripts/03_classify.R` from the deposited GT5 data: 13 of 36 ZIP>5 synergistic dose–response blocks have CSS≤50 and are reclassified as false positives, giving **36%** (13/36 ≈ 36.1%). The manuscript reports this same **36%** block-level figure, so the repository reproduces the manuscript exactly. (The separate "32% (66/206)" in the manuscript is the single-parameter discordance *rate* among all 206 combinations — a different quantity, left unchanged.)
 
