@@ -30,7 +30,7 @@ dt[, syn_all := ZIP_synergy > thr & HSA_synergy > thr & Loewe_synergy > thr & Bl
 dt[, ant_all := ZIP_synergy < -thr & HSA_synergy < -thr & Loewe_synergy < -thr & Bliss_synergy < -thr]
 dt[, class := "discordant"]
 dt[syn_all & css > css_thr, class := "synergistic"]
-dt[ant_all,                class := "antagonistic"]
+dt[ant_all == TRUE,        class := "antagonistic"]
 
 fwrite(dt, "results/drugcombs_scored.csv")
 
