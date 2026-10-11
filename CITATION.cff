@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Dual-Parameter Synergy–Sensitivity Profiling Framework for Epigenetic-Targeted Drug Combinations"
+abstract: >-
+  Open-source code and data accompanying the manuscript "Dual-Parameter Profiling of
+  Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer"
+  (Journal of Cheminformatics, submitted). Implements a dual-parameter framework that
+  jointly quantifies drug-combination synergy (HSA, Bliss, Loewe, ZIP via SynergyFinder 2.0)
+  and sensitivity (Combination Sensitivity Score, CSS) and applies a dual-threshold filter
+  to reduce false positives.
+authors:
+  - family-names: "Liu"
+    given-names: "Yong"
+  - family-names: "Chen"
+    given-names: "Xi"
+  - family-names: "Huang"
+    given-names: "Yeen"
+  - family-names: "Lu"
+    given-names: "Jiachun"
+  - family-names: "Cheung"
+    given-names: "Kin"
+  - family-names: "Fang"
+    given-names: "Shenying"
+license: MIT
+keywords:
+  - drug combination
+  - synergy
+  - Combination Sensitivity Score
+  - epigenetic-targeted therapy
+  - precision oncology
+  - reproducibility
+repository-code: "https://github.com/USER/dualparam-framework"
+url: "https://github.com/USER/dualparam-framework"

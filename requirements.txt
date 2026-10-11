@@ -1,0 +1,6 @@
+# Python convenience/QA dependencies for the dual-parameter framework.
+# Core analysis is implemented in R (see README.md, Section 2).
+pandas>=1.3
+numpy>=1.21
+scipy>=1.7
+matplotlib>=3.5

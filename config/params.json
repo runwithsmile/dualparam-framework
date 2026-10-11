@@ -1,0 +1,20 @@
+{
+  "framework": "Dual-Parameter Synergy-Sensitivity Profiling",
+  "synergy_models": ["HSA", "Bliss", "Loewe", "ZIP"],
+  "synergy_threshold": 5,
+  "antagonism_threshold": -5,
+  "css_threshold_pct": 50,
+  "dual_filter_rule": "synergistic = (ZIP>5 AND HSA>5 AND Loewe>5 AND Bliss>5) AND css>50; antagonistic = (all four synergy < -5); else discordant",
+  "css_definition": "css = (css1_ic502 + css2_ic501) / 2  [Malyutina et al., 2019, Ref. #3]",
+  "cell_lines": ["KBM-7", "A549", "MCF-7"],
+  "raw_inputs": [
+    "data/raw/drugcombs_response1_final_EpiTarget.csv",
+    "data/raw/drugcombs_response2_final_EpiTarget.csv"
+  ],
+  "block_level_summary": [
+    "results/SynergyFinder_summary_table1_2021-06-29.csv",
+    "results/SynergyFinder_summary_table2_2021-06-29.csv"
+  ],
+  "synergistic_reference": "supplementary/Table_S1_synergistic_GT5.csv",
+  "antagonistic_reference": "supplementary/Table_S2_antagonistic_LT-5.csv"
+}
