@@ -1,7 +1,7 @@
 {
   "title": "Dual-Parameter Synergy-Sensitivity Profiling of Epigenetic-Targeted Drug Combinations in Cancer",
   "upload_type": "software",
-  "description": "Combination therapies improve cancer outcomes but remain limited by unpredictable drug-drug interactions. Epigenetic-targeted agents can resensitize tumors to targeted drugs, yet the synergistic versus antagonistic landscape of such pairs is incompletely mapped. Here, we systematically profiled 206 epigenetic-targeted drug combinations spanning HDAC, DNMT, LSD1, and PARP inhibitor classes across three cancer cell lines (KBM-7, A549, MCF-7) using a dual-parameter computational framework. Synergy was quantified with four reference models (HSA, Bliss, Loewe, ZIP) on publicly available dose-response matrices, and therapeutic utility was scored with the Combination Sensitivity Score (CSS). Thirty-six combinations (17.5%) were synergistic across all models, whereas 171 were antagonistic. HDAC inhibitor + PARP inhibitor pairs dominated the synergistic class (61%), whereas LSD1 inhibitor + BCR-ABL inhibitor combinations were consistently antagonistic and mechanistically linked to Wnt/beta-catenin pathway activation. A dual-parameter filter (synergy >5 and CSS >50%) reduced false-positive calls by 32% relative to single-metric screening. Integrating four synergy models with sensitivity scoring provides a pragmatic roadmap for prioritizing epigenetic-targeted combinations and avoiding antagonistic regimens in preclinical development.",
+  "description": "Combination therapies improve cancer outcomes but remain limited by unpredictable drug-drug interactions. Epigenetic-targeted agents can resensitize tumors to targeted drugs, yet the synergistic versus antagonistic landscape of such pairs is incompletely mapped. Here, we systematically evaluated 208 epigenetic-targeted drug-pair dose-response blocks (evaluations) spanning HDAC, DNMT, LSD1, and PARP inhibitor classes across three cancer cell lines (KBM-7, A549, MCF-7) using a dual-parameter computational framework. Synergy was quantified with four reference models (HSA, Bliss, Loewe, ZIP) on publicly available dose-response matrices, and therapeutic utility was scored with the Combination Sensitivity Score (CSS). Thirty-six evaluations (17.3%) were synergistic across all models, whereas 171 were antagonistic. HDAC inhibitor + PARP inhibitor pairs dominated the synergistic class (61%), whereas LSD1 inhibitor + BCR-ABL inhibitor combinations were consistently antagonistic and mechanistically linked to Wnt/beta-catenin pathway activation. A dual-parameter filter (synergy >5 and CSS >50%) reduced false-positive calls by 32% relative to single-metric screening. Integrating four synergy models with sensitivity scoring provides a pragmatic roadmap for prioritizing epigenetic-targeted combinations and avoiding antagonistic regimens in preclinical development.",
   "creators": [
     {
       "name": "Liu, Yong",
@@ -38,7 +38,7 @@
   ],
   "license": "mit",
   "access_right": "open",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "related_identifiers": [
     {
       "identifier": "https://github.com/runwithsmile/dualparam-framework",
