@@ -31,3 +31,5 @@ keywords:
   - reproducibility
 repository-code: "https://github.com/runwithsmile/dualparam-framework"
 url: "https://github.com/runwithsmile/dualparam-framework"
+doi: "10.5281/zenodo.23311077"
+version: "v1.0.1"
