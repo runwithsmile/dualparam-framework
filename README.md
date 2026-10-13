@@ -1,7 +1,7 @@
 # Dual-Parameter Synergy–Sensitivity Profiling Framework for Epigenetic-Targeted Drug Combinations
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23340776.svg)](https://doi.org/10.5281/zenodo.23340776)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23342161.svg)](https://doi.org/10.5281/zenodo.23342161)
 
 > **Companion code repository for:** Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer.* (manuscript to be submitted).
 
@@ -140,7 +140,7 @@ A single command regenerates everything:
 
 ### 5.1 Checklist before archiving (author action required)
 
-- **Zenodo DOI** — archived at `10.5281/zenodo.23340776` (CITATION.cff `doi` field and top badge updated).
+- **Zenodo DOI** — archived at `10.5281/zenodo.23342161` (CITATION.cff `doi` field and top badge updated).
 - **GitHub URL** — set to the actual repository `github.com/runwithsmile/dualparam-framework` (GitHub username `runwithsmile`; this differs from the corresponding author's e-mail `liuyongjoy@outlook.com`).
 - **Step 1 (SynergyFinder 2.0)** regenerates the synergy + CSS tables from `data/raw/`. The deposited `results/*.csv` are the reference outputs; Steps 2–4 run directly on them without re-running SynergyFinder.
 - **Dual-threshold false-positive reduction** is computed live by `scripts/03_classify.R` from the deposited GT5 data: 13 of 36 ZIP>5 synergistic dose–response blocks have CSS≤50 and are reclassified as false positives, giving **36%** (13/36 ≈ 36.1%). The manuscript reports this same **36%** block-level figure, so the repository reproduces the manuscript exactly. (The separate "32% (66/208)" in the manuscript is the single-parameter discordance *rate* among all 208 combinations — a different quantity, left unchanged.)
@@ -159,7 +159,7 @@ Code is released under the **MIT License** (OSI-approved). See `LICENSE`. There 
 > Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer. (manuscript to be submitted).
 
 **This repository (archived with persistent DOI):**
-> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Synergy–Sensitivity Profiling Framework [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23340776
+> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Synergy–Sensitivity Profiling Framework [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23342161
 
 **Tools & data:**
 - SynergyFinder 2.0 — Ianevski A, Giri AK, Aittokallio T. *Nucleic Acids Res.* 2020;48(W1):W488–W493. (Ref. #4)
