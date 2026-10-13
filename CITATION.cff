@@ -4,7 +4,7 @@ title: "Dual-Parameter Synergy–Sensitivity Profiling Framework for Epigenetic-
 abstract: >-
   Open-source code and data accompanying the manuscript "Dual-Parameter Profiling of
   Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer"
-  (Journal of Cheminformatics, submitted). Implements a dual-parameter framework that
+  (manuscript to be submitted). Implements a dual-parameter framework that
   jointly quantifies drug-combination synergy (HSA, Bliss, Loewe, ZIP via SynergyFinder 2.0)
   and sensitivity (Combination Sensitivity Score, CSS) and applies a dual-threshold filter
   to reduce false positives.
@@ -32,4 +32,4 @@ keywords:
 repository-code: "https://github.com/runwithsmile/dualparam-framework"
 url: "https://github.com/runwithsmile/dualparam-framework"
 doi: "10.5281/zenodo.23340776"
-version: "v1.0.2"
+version: "v1.0.3"

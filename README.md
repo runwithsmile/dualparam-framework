@@ -3,11 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23340776.svg)](https://doi.org/10.5281/zenodo.23340776)
 
-> **Companion code repository for:** Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer.* Journal of Cheminformatics (submitted).
+> **Companion code repository for:** Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer.* (manuscript to be submitted).
 
 This repository provides the **dual-parameter computational framework** described in the manuscript: a pipeline that simultaneously quantifies **synergy** (interaction quality, via four reference models) and **sensitivity** (therapeutic potency, via the Combination Sensitivity Score, CSS) for epigenetic-targeted drug combinations, then applies a dual-threshold filter to suppress false positives.
 
-In full compliance with the *Journal of Cheminformatics* mandatory third-party reproducibility policy, every script, configuration, and intermediate output required to regenerate the manuscript's results is deposited here and is accessible **without registration or login**.
+In full compliance with the mandatory third-party reproducibility policy of the target journal, every script, configuration, and intermediate output required to regenerate the manuscript's results is deposited here and is accessible **without registration or login**.
 
 ---
 
@@ -156,7 +156,7 @@ Code is released under the **MIT License** (OSI-approved). See `LICENSE`. There 
 ## 7. How to cite
 
 **Paper (manuscript under review):**
-> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer. *Journal of Cheminformatics*. (submitted).
+> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer. (manuscript to be submitted).
 
 **This repository (archived with persistent DOI):**
 > Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Synergy–Sensitivity Profiling Framework [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23340776

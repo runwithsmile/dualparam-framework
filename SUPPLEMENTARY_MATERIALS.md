@@ -1,8 +1,8 @@
 # Supplementary Materials — Inventory & Structure
 
-*Companion to:* Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer.* Journal of Cheminformatics (submitted).
+*Companion to:* Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer.* (manuscript to be submitted).
 
-**Policy compliance:** Per the *Journal of Cheminformatics* reproducibility policy, all supplementary files are provided in the code repository (`/supplementary`) and as article supplementary material, accessible **without registration or login**.
+**Policy compliance:** Per the the target journal's reproducibility policy, all supplementary files are provided in the code repository (`/supplementary`) and as article supplementary material, accessible **without registration or login**.
 
 ---
 
