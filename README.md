@@ -1,11 +1,11 @@
 # Dual-Parameter Synergy–Sensitivity Profiling Framework for Epigenetic-Targeted Drug Combinations
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23340775.svg)](https://doi.org/10.5281/zenodo.23340775)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23557342.svg)](https://doi.org/10.5281/zenodo.23557342)
 
-> **Companion code repository for:** Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer.* (manuscript to be submitted).
+> **Companion code repository for:** Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. *Dual-Parameter Synergy-Sensitivity Profiling of Epigenetic-Targeted Drug Combinations in Cancer.* (manuscript to be submitted).
 
-This repository provides the **dual-parameter computational framework** described in the manuscript: a pipeline that simultaneously quantifies **synergy** (interaction quality, via four reference models) and **sensitivity** (therapeutic potency, via the Combination Sensitivity Score, CSS) for epigenetic-targeted drug combinations, then applies a dual-threshold filter to suppress false positives.
+This repository provides the **dual-parameter computational framework** described in the manuscript: a pipeline that simultaneously quantifies **synergy** (interaction quality, via four reference models) and **sensitivity** (therapeutic potency, via the Combination Sensitivity Score, CSS) for epigenetic-targeted drug combinations, then applies a dual-threshold filter that separates interaction quality from therapeutic sensitivity.
 
 In full compliance with the mandatory third-party reproducibility policy of the target journal, every script, configuration, and intermediate output required to regenerate the manuscript's results is deposited here and is accessible **without registration or login**.
 
@@ -36,15 +36,14 @@ dualparam-framework/
 ├── results/
 │   ├── SynergyFinder_summary_table1_*.csv
 │   ├── SynergyFinder_summary_table2_*.csv
-│   ├── drugcombs_scored.csv        # merged synergy + CSS matrix
-│   └── CSS_plots/                  # CSS distribution plots (png/svg)
+│   └── drugcombs_scored.csv        # merged synergy + CSS matrix
 └── supplementary/                 # supplementary tables & figures (see SUPPLEMENTARY_MATERIALS.md)
     ├── Table_S1_synergistic_GT5.csv        # 36 synergistic pairs (ZIP > 5)
     ├── Table_S2_antagonistic_LT-5.csv      # 171 antagonistic pairs (ZIP < -5)
     └── Epigenetic_targeted_drugs_list.xlsx # epigenetic-targeted agent inventory
 ```
 
-> **Status note:** The `scripts/*.R` files implementing the dual-parameter framework (synergy via SynergyFinder 2.0, CSS validation, dual-threshold classification, figures) are now deposited. The repository is complete and reproducible. Steps 2–4 run directly on the deposited CSVs; Step 1 regenerates them from `data/raw/` when SynergyFinder 2.0 is installed.
+> **Status note:** The four `scripts/*.R` files implementing the dual-parameter framework (synergy via SynergyFinder 2.0, CSS validation, dual-threshold classification, figures) are now deposited. The repository is complete and reproducible. Steps 2–4 run directly on the deposited CSVs; Step 1 regenerates them from `data/raw/` when SynergyFinder 2.0 is installed.
 
 ---
 
@@ -76,9 +75,9 @@ pip install -r requirements.txt
 All dose–response matrices were retrieved from **DrugCombDB** (Liu et al., 2019; Barardo et al., 2021), a curated public repository aggregating previously published pharmacological screening datasets. No new *in vitro* or *in vivo* experiments were performed.
 
 - **Source:** http://drugcombdb.denglab.org
-- **Scope:** 208 epigenetic-targeted drug-pair dose-response blocks (evaluations)
-- **Cell models:** KBM-7 (hematopoietic), A549 (lung adenocarcinoma), MCF-7 (breast)
-- **Raw inputs:** `data/raw/drugcombs_response{1,2}_final_EpiTarget.csv` (epigenetic-targeted subset, already filtered from the full DrugCombDB export)
+- **Scope:** 1,151 epigenetic-targeted drug-pair dose-response blocks (evaluations)
+- **Cell-line provenance:** the source DrugCombDB export does not expose per-block cell-line identifiers, so lineage-specific interpretation was not attempted (see Methods 2.2 in the manuscript)
+- **Raw inputs:** `data/raw/drugcombs_response1_final_EpiTarget.csv`, `data/raw/drugcombs_response2_final_EpiTarget.csv` (epigenetic-targeted subset, already filtered from the full DrugCombDB export)
 
 If you prefer to re-pull from DrugCombDB, the SAS import scripts in `data/import/` reproduce the exact subset used here.
 
@@ -110,12 +109,11 @@ Rscript scripts/04_figures.R --input results --output results --supp supplementa
   "synergy_threshold": 5,
   "antagonism_threshold": -5,
   "css_threshold_pct": 50,
-  "dual_filter": "synergy_score > 5 AND CSS > 50% across all four models",
-  "cell_lines": ["KBM-7", "A549", "MCF-7"]
+  "dual_filter": "synergy_score > 5 AND CSS > 50% across all four models"
 }
 ```
 
-The **dual-threshold filter** (synergy score > 5 **and** CSS > 50% across all four models) reduces discordant (false-positive) classifications by **36%** relative to single-parameter classification.
+The **dual-threshold filter** (synergy score > 5 **and** CSS > 50% across all four models) reclassifies **13 of 36 (36.1%)** consensus-synergistic blocks as sensitivity-insufficient (CSS <=50%), i.e. it flags blocks that are synergistic but not therapeutically sensitive.
 
 ---
 
@@ -125,12 +123,10 @@ Every number, figure, and table in the manuscript is regenerated from the deposi
 
 | Manuscript element | Regenerated by | Output file |
 |--------------------|----------------|-------------|
-| Fig. 1 — synergy-score distribution (4 models) | `04_figures.R` | `results/CSS_plots/fig_synergy_distribution.png` |
-| Fig. 2 — dual-parameter synergy–sensitivity landscape | `04_figures.R` | `supplementary/fig_dualparam_landscape.png` |
-| Fig. 3 — classification composition | `04_figures.R` | `supplementary/fig_class_bar.png` |
+| Figures 2–4 (manuscript) | `04_figures.R` | `results/` and `supplementary/` (figure images are supplied with the manuscript as separate files) |
 | Table 2 — classified combination profile | `03_classify.R` | `results/drugcombs_scored.csv` |
 | Synergistic / antagonistic reference (36 / 171) | deposited | `supplementary/Table_S1_synergistic_GT5.csv`, `Table_S2_antagonistic_LT-5.csv` |
-| Dual-threshold false-positive reduction | `03_classify.R` | printed to stdout (computed live on deposited data) |
+| Dual-parameter filter (13 of 36 reclassified) | `03_classify.R` | printed to stdout (computed live on deposited data) |
 
 A single command regenerates everything:
 
@@ -140,10 +136,10 @@ A single command regenerates everything:
 
 ### 5.1 Checklist before archiving (author action required)
 
-- **Zenodo DOI** — archived at `10.5281/zenodo.23340775` (CITATION.cff `doi` field and top badge updated).
+- **Zenodo DOI** — archived at `10.5281/zenodo.23557342` (CITATION.cff `doi` field and top badge updated).
 - **GitHub URL** — set to the actual repository `github.com/runwithsmile/dualparam-framework` (GitHub username `runwithsmile`; this differs from the corresponding author's e-mail `liuyongjoy@outlook.com`).
-- **Step 1 (SynergyFinder 2.0)** regenerates the synergy + CSS tables from `data/raw/`. The deposited `results/*.csv` are the reference outputs; Steps 2–4 run directly on them without re-running SynergyFinder.
-- **Dual-threshold false-positive reduction** is computed live by `scripts/03_classify.R` from the deposited GT5 data: 13 of 36 ZIP>5 synergistic dose–response blocks have CSS≤50 and are reclassified as false positives, giving **36%** (13/36 ≈ 36.1%). The manuscript reports this same **36%** block-level figure, so the repository reproduces the manuscript exactly. (The separate "32% (66/208)" in the manuscript is the single-parameter discordance *rate* among all 208 combinations — a different quantity, left unchanged.)
+- **Step 1 (SynergyFinder 2.0)** regenerates the synergy + CSS tables from `data/raw/`. The deposited `results/` CSV files are the reference outputs; Steps 2–4 run directly on them without re-running SynergyFinder.
+- **The dual-parameter filter** is computed live by `scripts/03_classify.R` from the deposited GT5 data: 13 of 36 four-model consensus-synergistic dose–response blocks have CSS≤50 and are reclassified as sensitivity-insufficient, giving **36.1%** (13/36). The manuscript reports this same **36.1%** block-level figure, so the repository reproduces the manuscript exactly.
 
 ---
 
@@ -156,10 +152,10 @@ Code is released under the **MIT License** (OSI-approved). See `LICENSE`. There 
 ## 7. How to cite
 
 **Paper (manuscript under review):**
-> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Profiling of Synergistic and Antagonistic Epigenetic-Targeted Drug Combinations in Cancer. (manuscript to be submitted).
+> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Synergy-Sensitivity Profiling of Epigenetic-Targeted Drug Combinations in Cancer. (manuscript to be submitted).
 
 **This repository (archived with persistent DOI):**
-> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Synergy–Sensitivity Profiling Framework [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23340775
+> Liu Y, Chen X, Huang Y, Lu J, Cheung K, Fang S. Dual-Parameter Synergy–Sensitivity Profiling Framework [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23557342
 
 **Tools & data:**
 - SynergyFinder 2.0 — Ianevski A, Giri AK, Aittokallio T. *Nucleic Acids Res.* 2020;48(W1):W488–W493. (Ref. #4)
