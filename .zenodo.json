@@ -1,7 +1,7 @@
 {
  "title": "Dual-Parameter Synergy-Sensitivity Profiling of Epigenetic-Targeted Drug Combinations in Cancer",
  "upload_type": "software",
- "doi": "10.5281/zenodo.23557342",
+ "doi": "10.5281/zenodo.23902572",
  "description": "Combination therapies improve cancer outcomes but remain limited by unpredictable drug-drug interactions. Epigenetic-targeted agents can resensitize tumors to targeted drugs, yet the synergistic versus antagonistic landscape of such pairs is incompletely mapped. Here, we systematically scored 1,151 epigenetic-targeted drug-pair dose-response blocks (each block is one drug pair assessed under one experimental condition) drawn from the ALMANAC and CLOUD datasets aggregated in DrugCombDB, using a dual-parameter computational framework. Synergy was quantified with four reference models (HSA, Bliss, Loewe, ZIP) on publicly available dose-response matrices, and therapeutic utility was scored with the Combination Sensitivity Score (CSS). Four-model consensus classified 506 of the 1,151 blocks (44.0%): 36 synergistic (3.1%), 171 antagonistic (14.9%) and 299 additive (26.0%), with the remaining 645 (56.0%) left indeterminate because the models disagreed. A dual-parameter filter (synergy >5 and CSS >50%) reclassified 13 of the 36 consensus-synergistic blocks (36.1%) as sensitivity-insufficient and identified 35 antagonistic blocks (20.5%) combining strong antagonism with CSS >50%. All code, per-block scored outputs, and parameter configurations needed to reproduce these results are included in this archive under the MIT license.",
  "creators": [
   {
